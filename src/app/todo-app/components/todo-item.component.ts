@@ -1,4 +1,5 @@
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
+import {Item} from "../todo-app.component";
 
 @Component({
   selector: 'todo-item',
@@ -6,9 +7,10 @@ import {Component} from "@angular/core";
     <li>
         <div class="view">
           <input class="toggle"
+                 [checked]="item.done"
                  type="checkbox">
 
-          <label>Todo Tittle</label>
+          <label>{{ item.title }}</label>
 
           <button class="destroy"></button>
         </div>
@@ -18,4 +20,9 @@ import {Component} from "@angular/core";
   `
 })
 
-export class TodoItemComponent {}
+export class TodoItemComponent {
+
+  @Input()
+  private item: Item;
+
+}

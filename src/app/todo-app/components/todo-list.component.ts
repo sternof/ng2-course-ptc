@@ -5,7 +5,8 @@ import {Item} from "../todo-app.component";
   selector: 'todo-list',
   template: `
     <ul class="todo-list">
-      <todo-item *ngFor="let item of items"></todo-item>
+      <todo-item *ngFor="let item of items" 
+                 [item]="item"></todo-item>
     </ul>
    `
 })

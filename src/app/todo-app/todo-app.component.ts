@@ -404,7 +404,7 @@ export class TodoAppComponent {
   private items: Item[];
 
   constructor() {
-    this.items = [];
+    this.items = [new Item('yes'), new Item('no')];
     this.title = "todos";
   }
 
