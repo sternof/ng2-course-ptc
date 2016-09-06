@@ -2,7 +2,10 @@ import {Component} from "@angular/core";
 
 @Component({
   selector: 'todo-main',
-  template: `<h2>todo main</h2>`
+  template: `
+    <todo-toggle></todo-toggle>
+    <todo-list></todo-list>
+  `
 })
 
 export class TodoMainComponent {}

@@ -2,7 +2,9 @@ import {Component} from "@angular/core";
 
 @Component({
   selector: 'todo-footer',
-  template: `<h2>todo footer</h2>`
+  template: `
+    <todo-counter></todo-counter>
+   `
 })
 
 export class TodoFooterComponent {}
