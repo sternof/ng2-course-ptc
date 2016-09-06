@@ -2,13 +2,15 @@ import {Component} from "@angular/core";
 
 @Component({
   selector   : 'app',
-  template: `<h1>{{ today | date:'short' }}</h1>`,
+  template: `    
+    <todo-app></todo-app>
+  `,
 })
 
 
 export class AppComponent {
 
-private today = new Date();
+
 
 
 
