@@ -3,8 +3,10 @@ import {Component} from "@angular/core";
 @Component({
   selector: 'todo-list',
   template: `
-    <todo-item></todo-item>
-  `
+    <ul class="todo-list">
+      <todo-item></todo-item>
+    </ul>
+   `
 })
 
 export class TodoListComponent {}

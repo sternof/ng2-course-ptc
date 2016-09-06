@@ -2,7 +2,12 @@ import {Component} from "@angular/core";
 
 @Component({
   selector: 'todo-counter',
-  template: `<h2>todo counter</h2>`
+  template: `
+    <span class="todo-count">
+      <strong>1</strong>
+      item left
+    </span>
+`
 })
 
 export class TodoCounterComponent {}

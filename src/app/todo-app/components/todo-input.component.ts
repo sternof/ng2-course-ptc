@@ -2,7 +2,11 @@ import {Component} from "@angular/core";
 
 @Component({
   selector: 'todo-input',
-  template: `<h2>todo input</h2>`
+  template: `
+  <input class="new-todo"
+           placeholder="What needs to be done?"
+           autofocus>
+  `
 })
 
 export class TodoInputComponent {}

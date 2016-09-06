@@ -3,7 +3,12 @@ import {Component} from "@angular/core";
 @Component({
   selector: 'todo-header',
   template: `
-    <todo-input></todo-input>
+    <header class="header">
+   
+      <h1>todos</h1>
+
+      <todo-input></todo-input>
+    </header>
   `
 })
 
