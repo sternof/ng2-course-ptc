@@ -1,19 +1,13 @@
-import {Component, Input} from "@angular/core";
-import {Item} from "../todo-app.component";
+import {Component} from "@angular/core";
 
 @Component({
   selector: 'todo-main',
   template: `
     <section class="main">
-      <todo-toggle></todo-toggle>
-      <todo-list [items]="items"></todo-list>
+      <ng-content></ng-content>      
     </section>
    `
 })
 
 export class TodoMainComponent {
-
-  @Input()
-  private items: Item[];
-
 }

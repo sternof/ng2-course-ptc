@@ -1,27 +1,12 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input, Output, EventEmitter} from "@angular/core";
 
 @Component({
   selector: 'todo-header',
   template: `
-    <header class="header">
-      
-      <h1>{{ title }}</h1>
-
-      <todo-input (itemAdded)="log($event)"></todo-input>
-      
-    </header>
+    <div class="header">
+      <ng-content></ng-content>      
+    </div>
   `
 })
 
-export class TodoHeaderComponent {
-
-  @Input()
-  private title: string;
-
-
-  log(event){
-    console.log(event);
-  }
-
-
-}
+export class TodoHeaderComponent {}

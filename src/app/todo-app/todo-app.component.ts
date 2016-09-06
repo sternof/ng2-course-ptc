@@ -388,11 +388,19 @@ html .clear-completed:active {
   template     : `
     <section class="todoapp">
     
-      <todo-header [title]="title"></todo-header>
+      <todo-header>        
+        <todo-input (itemAdded)="addItem($event)"></todo-input>
+      </todo-header>
       
-      <todo-main [items]="items"></todo-main>
+      <todo-main>
+        <todo-toggle></todo-toggle>
+        <todo-list [items]="items"></todo-list>
+      </todo-main>
       
-      <todo-footer></todo-footer>
+      <todo-footer>
+        <todo-counter [amount]="items.length"></todo-counter>  
+       <button class="clear-completed">Clear completed</button>
+      </todo-footer>
       
     </section>
   `
@@ -400,6 +408,7 @@ html .clear-completed:active {
 
 export class TodoAppComponent {
 
+  private obj = {id: 4 };
   private title: string;
   private items: Item[];
 
@@ -427,7 +436,7 @@ export class Item {
 
   constructor(title:string) {
     this.title = title;
-    this.done  = false;
+    this.done  = true;
   }
 
 }
