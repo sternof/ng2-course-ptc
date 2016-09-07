@@ -1,7 +1,7 @@
 import {Item} from "./item.model";
 import {ListStorage} from "../../ptc-core/storage";
 import {Injectable} from "@angular/core";
-
+import {Api} from "../../ptc-core/api";
 
 @Injectable()
 export class TodoList {
@@ -10,10 +10,15 @@ export class TodoList {
   private storage:ListStorage;
   private item:any;
 
-  constructor(storage:ListStorage, _item:Item) {
-    this.items   = storage.getItem() || [];
+  constructor(storage:ListStorage, _item:Item, api: Api) {
+    this.items   = [];
     this.storage = storage;
     this.item    = _item;
+
+    api.get('http://localhost:3001/items')
+        .map( result => result.json() )
+        .do( data => console.log(data) )
+        .subscribe( (items:Item[]) => this.items = items)
   }
 
   public addItem(title:string) {
