@@ -5,10 +5,11 @@ import {Item} from "../providers/item.model";
 @Component({
   selector: 'todo-item',
   template: `
-    <li [ngClass]="{complete: item.done}">
+    <li [ngClass]="{completed: item.done}">
         <div class="view">
           <input class="toggle"
                  [checked]="item.done"
+                 (change)="model.toggleDone(item)"
                  type="checkbox">
 
           <label>{{ item.title }}</label>

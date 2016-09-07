@@ -1,29 +1,16 @@
-
 import {NgModule} from "@angular/core";
 import {ListStorage} from "./storage";
 import {Item} from "../todo-app/providers/item.model";
-import {HttpModule, Http} from "@angular/http";
-import {Api} from './api';
+import {HttpModule} from "@angular/http";
+import {CountPipe} from "../todo-app/count.pipe";
 
 
 @NgModule({
-  providers:[
+  providers: [
     ListStorage,
-    { provide: Api,
-      useFactory: function (server) {
-      let apiObject = new Api(server);
-
-      apiObject.setBaseUrl('//api/v2/');
-      return apiObject;
-    }, deps: [Http] },
-
-    { provide: Item,        useValue:Item },
+    {provide: Item, useValue: Item},
   ],
-  imports: [HttpModule]
+  imports  : [HttpModule]
 })
 
-
-
-export class PtcCoreModule{
-
-}
+export class PtcCoreModule {}

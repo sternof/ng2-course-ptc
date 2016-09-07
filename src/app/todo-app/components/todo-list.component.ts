@@ -3,7 +3,7 @@ import {TodoList} from "../providers/todo-list.provider";
 
 @Component({
   selector: 'todo-list',
-  template: `
+  template: `  
     <ul class="todo-list">
       <todo-item *ngFor="let item of model.items" 
                  [item]="item">                 
@@ -19,5 +19,6 @@ export class TodoListComponent {
   constructor(_model:TodoList) {
     this.model = _model;
   }
+
 
 }

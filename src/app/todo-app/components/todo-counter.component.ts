@@ -6,7 +6,7 @@ import {TodoList} from "../providers/todo-list.provider";
   inputs: ['amount'],
   template: `
     <span class="todo-count">
-      <strong>{{model.items.length}}</strong>
+      <strong>{{ model.items |   counter:'done':false }}</strong>
       item left
     </span>
 `
@@ -19,6 +19,5 @@ export class TodoCounterComponent {
   constructor(model:TodoList) {
     this.model = model;
   }
-
 
 }
