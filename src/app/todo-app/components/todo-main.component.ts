@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import {ListStorage} from "../../ptc-core/storage";
 
 @Component({
   selector: 'todo-main',
@@ -10,4 +11,6 @@ import {Component} from "@angular/core";
 })
 
 export class TodoMainComponent {
+
+
 }
