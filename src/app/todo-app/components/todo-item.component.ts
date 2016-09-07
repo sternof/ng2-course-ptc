@@ -13,8 +13,7 @@ import {Item} from "../todo-app.component";
           <label>{{ item.title }}</label>
 
           <button class="destroy"></button>
-          
-          
+                    
         </div>
 
         <input class="edit">
