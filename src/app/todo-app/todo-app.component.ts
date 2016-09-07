@@ -1,4 +1,5 @@
 import {Component, ViewEncapsulation} from "@angular/core";
+import {TodoList} from "./providers/todo-list.provider";
 
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -388,17 +389,18 @@ html .clear-completed:active {
   template     : `
     <section class="todoapp">
     
-      <todo-header>        
-        <todo-input (itemAdded)="addItem($event)"></todo-input>
+      <todo-header>   
+        <h1>{{ title }}</h1>   
+        <todo-input></todo-input>
       </todo-header>
       
       <todo-main>
         <todo-toggle></todo-toggle>
-        <todo-list [items]="items"></todo-list>
+        <todo-list></todo-list>
       </todo-main>
       
       <todo-footer>
-        <todo-counter [amount]="items.length"></todo-counter>  
+        <todo-counter></todo-counter>  
        <button class="clear-completed">Clear completed</button>
       </todo-footer>
       
@@ -408,35 +410,11 @@ html .clear-completed:active {
 
 export class TodoAppComponent {
 
-  private obj = {id: 4 };
   private title: string;
-  private items: Item[];
+  private model: TodoList;
 
-  constructor() {
-    this.items = [new Item('yes'), new Item('no')];
+  constructor(list: TodoList) {
     this.title = "todos";
+    this.model = list;
   }
-
-  public addItem(title: string) {
-    this.items.push(new Item(title));
-  }
-
-  public removeItem(item: Item){
-    let _index = this.items.indexOf(item);
-    this.items.splice(_index, 1);
-  }
-
-
-}
-
-export class Item {
-
-  public title:string;
-  public done:boolean;
-
-  constructor(title:string) {
-    this.title = title;
-    this.done  = true;
-  }
-
 }

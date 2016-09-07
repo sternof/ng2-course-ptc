@@ -1,18 +1,23 @@
-import {Component, Input} from "@angular/core";
-import {Item} from "../todo-app.component";
+import {Component} from "@angular/core";
+import {TodoList} from "../providers/todo-list.provider";
 
 @Component({
   selector: 'todo-list',
   template: `
     <ul class="todo-list">
-      <todo-item *ngFor="let item of items" 
-                 [item]="item"></todo-item>
+      <todo-item *ngFor="let item of model.items" 
+                 [item]="item">                 
+      </todo-item>
     </ul>
    `
 })
 
 export class TodoListComponent {
 
-  @Input()
-  private items: Item[];
+  private model:TodoList;
+
+  constructor(_model:TodoList) {
+    this.model = _model;
+  }
+
 }

@@ -1,10 +1,11 @@
 import {Component, Input} from "@angular/core";
-import {Item} from "../todo-app.component";
+import {TodoList} from "../providers/todo-list.provider";
+import {Item} from "../providers/item.model";
 
 @Component({
   selector: 'todo-item',
   template: `
-    <li [ngClass]="getClass()">
+    <li [ngClass]="{complete: item.done}">
         <div class="view">
           <input class="toggle"
                  [checked]="item.done"
@@ -12,7 +13,7 @@ import {Item} from "../todo-app.component";
 
           <label>{{ item.title }}</label>
 
-          <button class="destroy"></button>
+          <button (click)="model.removeItem(item)" class="destroy"></button>
                     
         </div>
 
@@ -26,13 +27,10 @@ export class TodoItemComponent {
   @Input()
   private item: Item;
 
+  private model:TodoList;
 
-
-  getClass(){
-    return {
-      completed: this.item.done
-    }
+  constructor(_model:TodoList) {
+    this.model = _model
   }
-
 
 }

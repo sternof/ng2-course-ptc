@@ -1,11 +1,12 @@
 import {Component, EventEmitter, Output} from "@angular/core";
+import {TodoList} from "../providers/todo-list.provider";
 
 @Component({
   selector: 'todo-input',
   template: `
   <input class="new-todo"
          #input  
-         (keydown.enter)="itemAdded.emit(input.value)"         
+         (keydown.enter)="model.addItem(input.value)"         
          placeholder="What needs to be done?"         
          autofocus>                                                          
   `
@@ -13,10 +14,10 @@ import {Component, EventEmitter, Output} from "@angular/core";
 
 export class TodoInputComponent {
 
-  @Output()
-  private itemAdded: EventEmitter<string>;
+  private model: TodoList;
 
-  constructor() {
-    this.itemAdded = new EventEmitter<string>();
-  }
+  // constructor(private model: TodoList) {}
+   constructor(_model: TodoList) {
+     this.model = _model;
+   }
 }
