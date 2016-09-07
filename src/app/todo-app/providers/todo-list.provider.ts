@@ -2,19 +2,22 @@ import {Item} from "./item.model";
 import {ListStorage} from "../../ptc-core/storage";
 import {Injectable} from "@angular/core";
 
+
 @Injectable()
 export class TodoList {
 
   public items: Item[];
   private storage: ListStorage;
+  private item: any;
 
-  constructor(storage: ListStorage) {
+  constructor(storage: ListStorage, _item: Item) {
     this.items = storage.getItem() || [];
     this.storage = storage;
+    this.item = _item;
   }
 
   public addItem(title: string) {
-    this.items.push(new Item(title));
+    this.items.push(new this.item(title));
     this.storage.setItem(this.items);
   }
 
