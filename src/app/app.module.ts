@@ -1,15 +1,22 @@
 import {NgModule} from "@angular/core";
 import {AppComponent} from "./app.component";
 import {TodoAppModule} from "./todo-app/todo-app.module";
-import {TodoList} from "./todo-app/providers/todo-list.provider";
 import {PtcCoreModule} from "./ptc-core/ptc-core.module";
-import {CountPipe} from "./todo-app/count.pipe";
+import {LoginModule} from "./login/login.module";
+import {RouterModule} from "@angular/router";
+import {routes} from "./app.routes";
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports     : [TodoAppModule, PtcCoreModule],
+  imports     : [
+    TodoAppModule,
+    PtcCoreModule,
+    LoginModule,
+    RouterModule.forRoot(routes),
+  ],
   bootstrap   : [AppComponent]
 })
 
-export class AppModule {}
+export class AppModule {
+}
