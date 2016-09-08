@@ -9,4 +9,10 @@ import {Component, Input, Output, EventEmitter} from "@angular/core";
   `
 })
 
-export class TodoHeaderComponent {}
+export class TodoHeaderComponent {
+
+
+  constructor() {
+    console.log("TodoHeaderComponent constructed");
+  }
+}

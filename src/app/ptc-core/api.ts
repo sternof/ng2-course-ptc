@@ -12,7 +12,9 @@ export class Api {
   }
 
   get(url){
-    return this.http.get(url);
+    return this.http.get(url)
+        .map( result => result.json() )
+        .do( data => console.log(data) )
   }
 
 }

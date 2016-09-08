@@ -1,5 +1,6 @@
-import {Component} from "@angular/core";
+import {Component, OnInit, OnDestroy} from "@angular/core";
 import {TodoList} from "../providers/todo-list.provider";
+import {Http} from "@angular/http";
 
 @Component({
   selector: 'todo-list',
@@ -12,12 +13,13 @@ import {TodoList} from "../providers/todo-list.provider";
    `
 })
 
-export class TodoListComponent {
+export class TodoListComponent  {
 
   private model:TodoList;
 
-  constructor(_model:TodoList) {
-    this.model = _model;
+
+  constructor(model: TodoList) {
+    this.model= model;
   }
 
 

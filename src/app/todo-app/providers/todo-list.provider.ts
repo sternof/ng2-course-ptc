@@ -9,17 +9,15 @@ export class TodoList {
   public items:Item[];
   private storage:ListStorage;
   private item:any;
+  private api: Api;
 
   constructor(storage:ListStorage, _item:Item, api: Api) {
     this.items   = [];
     this.storage = storage;
     this.item    = _item;
-
-    api.get('http://localhost:3001/items')
-        .map( result => result.json() )
-        .do( data => console.log(data) )
-        .subscribe( (items:Item[]) => this.items = items)
+    this.api     = api
   }
+
 
   public addItem(title:string) {
     this.items.push(new this.item(title));
