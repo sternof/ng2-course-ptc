@@ -10,6 +10,7 @@ export const routes:Routes = [
     path: 'login',
     component: LoginFormComponent,
     children: [
+      {path: '', redirectTo: 'user', pathMatch:'full'},
       {path: 'admin', component: LoginFormAdminComponent},
       {path: 'user', component: LoginFormUserComponent},
     ]
