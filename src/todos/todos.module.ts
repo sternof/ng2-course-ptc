@@ -3,13 +3,19 @@ import {TodosComponent} from "./todos.component";
 import {TodosMainComponent} from "./todos-main.component";
 import {TodosHeaderComponent} from "./todos-header.component";
 import {TodosFooterComponent} from "./todos-footer.component";
+import {TodosToggleComponent} from "./todos-toggle.component";
+import {TodosListComponent} from "./todos-list.component";
+import {TodosListItemComponent} from "./todos-list-item.component";
 
 @NgModule({
   declarations: [
     TodosComponent,
     TodosMainComponent,
     TodosHeaderComponent,
-    TodosFooterComponent
+    TodosFooterComponent,
+    TodosToggleComponent,
+    TodosListComponent,
+    TodosListItemComponent
   ],
   exports     : [TodosComponent]
 })

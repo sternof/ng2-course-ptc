@@ -3,7 +3,10 @@ import {Component} from "@angular/core";
 
 @Component({
   selector: 'todos-main',
-  template: `<h2>Todos Main</h2>`
+  template: `
+    <todos-toggle></todos-toggle>
+    <todos-list></todos-list>
+   `
 })
 
 export class TodosMainComponent {}
