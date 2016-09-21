@@ -1,11 +1,13 @@
-
 import {Component} from "@angular/core";
 
 @Component({
   selector: 'todos-list',
   template: `
-   <todos-list-item></todos-list-item>
+    <ul class="todo-list">
+      <todos-list-item></todos-list-item>
+   </ul>
   `
 })
 
-export class TodosListComponent {}
+export class TodosListComponent {
+}
