@@ -28,14 +28,14 @@ export class TodosComponent {
   constructor() {
     this.title = "TODOS";
     this.items = [
-        new Item('learn angular'),
-        new Item('learn type script'),
-        new Item('learn js'),
+        new Item('learn angular', true),
+        new Item('learn type script', true),
+        new Item('learn js', false),
     ];
   }
 
   addItem(text: string){
-    this.items.push(new Item(text))
+    this.items.push(new Item(text, false))
   }
 
   removeItem(item:Item){
@@ -49,9 +49,9 @@ export class Item {
   public title:string;
   public done:boolean;
 
-  constructor(title:string) {
+  constructor(title:string, done:boolean) {
     this.title = title;
-    this.done  = false;
+    this.done  = done;
   }
 }
 

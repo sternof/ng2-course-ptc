@@ -5,10 +5,13 @@ import {Item} from "./todos.component";
 @Component({
   selector: 'todos-list-item',
   template: `
-    <li>
+    <li [ngClass]="{ completed: item.done }">
         <div class="view">
+        
           <input class="toggle"
+                 [checked]="item.done"
                  type="checkbox">
+                 
           <label>{{ item.title }}</label>
 
           <button class="destroy"></button>
