@@ -6,6 +6,7 @@ import {TodosFooterComponent} from "./todos-footer.component";
 import {TodosToggleComponent} from "./todos-toggle.component";
 import {TodosListComponent} from "./todos-list.component";
 import {TodosListItemComponent} from "./todos-list-item.component";
+import {SharedComponentsModule} from "../shared-components/shared-components.module";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {TodosListItemComponent} from "./todos-list-item.component";
     TodosListComponent,
     TodosListItemComponent
   ],
+  imports     : [SharedComponentsModule],
   exports     : [TodosComponent]
 })
 
