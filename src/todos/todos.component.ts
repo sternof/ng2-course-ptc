@@ -1,16 +1,17 @@
-
 import {Component, ViewEncapsulation} from "@angular/core";
 
 @Component({
-  selector: 'todos',
+  selector     : 'todos',
   encapsulation: ViewEncapsulation.None,
-  styleUrls:['./todos.css'],
-  template: `    
+  styleUrls    : ['todos/todos.css'],
+  template     : `    
     <section class="todoapp">
-      <todos-hedaer></todos-hedaer>
+    
+      <todos-hedaer [title]="title"></todos-hedaer>
+      
       <todos-main>
           <todos-toggle></todos-toggle>          
-          <todos-list></todos-list>
+          <todos-list [items]="items"></todos-list>
       </todos-main>
       <todos-footer>
         <counter></counter>
@@ -19,4 +20,51 @@ import {Component, ViewEncapsulation} from "@angular/core";
 `
 })
 
-export class TodosComponent {}
+export class TodosComponent {
+
+  private title:string;
+  private items: Item[];
+
+  constructor() {
+    this.title = "TODOS";
+    this.items = [
+        new Item('learn angular'),
+        new Item('learn type script'),
+        new Item('learn js'),
+    ];
+  }
+
+  addItem(text: string){
+    this.items.push(new Item(text))
+  }
+
+  removeItem(item:Item){
+    let index = this.items.indexOf(item);
+    this.items.splice(index, 1);
+  }
+
+}
+
+export class Item {
+  public title:string;
+  public done:boolean;
+
+  constructor(title:string) {
+    this.title = title;
+    this.done  = false;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
