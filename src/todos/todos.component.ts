@@ -1,12 +1,16 @@
 
-import {Component} from "@angular/core";
+import {Component, ViewEncapsulation} from "@angular/core";
 
 @Component({
   selector: 'todos',
+  encapsulation: ViewEncapsulation.None,
+  styleUrls:['./todos.css'],
   template: `    
-    <todos-hedaer></todos-hedaer>
-    <todos-main></todos-main>
-    <todos-footer></todos-footer>
+    <section class="todoapp">
+      <todos-hedaer></todos-hedaer>
+      <todos-main></todos-main>
+      <todos-footer></todos-footer>
+    </section>
 `
 })
 

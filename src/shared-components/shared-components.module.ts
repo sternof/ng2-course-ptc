@@ -3,8 +3,9 @@ import {CounterComponent} from "./counter.component";
 
 @NgModule({
   declarations: [CounterComponent],
-  exports: [CounterComponent]
+  exports     : [CounterComponent]
 })
 
 
-export class SharedComponentsModule {}
+export class SharedComponentsModule {
+}
