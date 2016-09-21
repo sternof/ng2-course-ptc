@@ -5,7 +5,7 @@ import {Item} from "./todos.component";
 @Component({
   selector: 'todos-list-item',
   template: `
-    <li [ngClass]="{ completed: item.done }">
+    <li [ngClass]="getClass(item)">
         <div class="view">
         
           <input class="toggle"
@@ -13,8 +13,8 @@ import {Item} from "./todos.component";
                  type="checkbox">
                  
           <label>{{ item.title }}</label>
-
-          <button class="destroy"></button>
+                            
+          <button *ngIf="item.done" class="destroy"></button>
 
         </div>
         <input class="edit">
@@ -27,4 +27,18 @@ export class TodosListItemComponent {
 
   @Input()
   private item: Item;
+
+  getClass(item){
+    return { completed: item.done }
+  }
 }
+
+
+
+
+
+
+
+
+
+
