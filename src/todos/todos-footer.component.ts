@@ -5,7 +5,7 @@ import {Component} from "@angular/core";
   selector: 'todos-footer',
   template: `
 <footer class="footer">
-    <counter></counter>    
+    <ng-content></ng-content>    
     <button class="clear-completed">Clear completed</button>
   </footer>
   

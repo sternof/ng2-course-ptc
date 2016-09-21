@@ -8,8 +8,13 @@ import {Component, ViewEncapsulation} from "@angular/core";
   template: `    
     <section class="todoapp">
       <todos-hedaer></todos-hedaer>
-      <todos-main></todos-main>
-      <todos-footer></todos-footer>
+      <todos-main>
+          <todos-toggle></todos-toggle>          
+          <todos-list></todos-list>
+      </todos-main>
+      <todos-footer>
+        <counter></counter>
+      </todos-footer>
     </section>
 `
 })
