@@ -5,7 +5,7 @@ import {ListViewComponent} from "../todos/list-view.component";
 import {TableViewComponent} from "../todos/table-view.component";
 
 export const routes:Routes = [
-  {path: '', redirectTo: 'login'},
+  {path: '', redirectTo: 'login', pathMatch:'full'},
   {path: 'login', component: LoginComponent},
   {
     path     : 'todos',
