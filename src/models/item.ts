@@ -4,6 +4,6 @@ export class Item {
 
   constructor(title:string) {
     this.title = title;
-    this.done  = true;
+    this.done  = false;
   }
 }

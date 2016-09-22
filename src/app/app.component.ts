@@ -3,7 +3,8 @@ import {TodoList} from "../models/todo-list.provider";
 
 @Component({
   selector   : 'app',
-  template   : `    
+  template   : `   
+    <login></login>
     <todos></todos>    
   `,
 })
