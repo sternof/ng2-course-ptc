@@ -1,8 +1,9 @@
-import {Component, Input} from "@angular/core";
-import {Item} from "./todos.component";
+import {Component, Input, ChangeDetectionStrategy} from "@angular/core";
+
 
 @Component({
   selector: 'todos-list',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <ul class="todo-list">      
       <todos-list-item *ngFor="let item of items"                        
@@ -15,6 +16,6 @@ import {Item} from "./todos.component";
 export class TodosListComponent {
 
   @Input()
-  private items: Item[];
+  private items: any[];
 
 }

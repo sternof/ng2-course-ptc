@@ -1,5 +1,5 @@
-import {Component, Input, Output, EventEmitter} from "@angular/core";
-import {Item} from "./todos.component";
+import {Component, Input} from "@angular/core";
+import {TodoList} from "../models/todo-list.provider";
 
 @Component({
   selector: 'todos-hedaer',
@@ -8,11 +8,11 @@ import {Item} from "./todos.component";
     
     <h1>{{ title }} </h1>
    
-   
+
     <input class="new-todo"
            #input
            type="text"
-           (keyup.enter)="itemAdded.emit(input.value)"
+           (keyup.enter)="list.addItem(input.value)"
            placeholder="What needs to be done?"
            autofocus>
   </header>
@@ -23,13 +23,11 @@ export class TodosHeaderComponent {
 
   @Input()
   private title:string;
-  private item = new Item('nir');
 
-  @Output()
-  private itemAdded: EventEmitter<string>;
+  private list:TodoList;
 
-  constructor() {
-    this.itemAdded = new EventEmitter<string>();
+  constructor(list:TodoList) {
+    this.list = list;
   }
 
 }

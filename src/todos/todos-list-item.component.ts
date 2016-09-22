@@ -1,6 +1,5 @@
 
 import {Component, Input} from "@angular/core";
-import {Item} from "./todos.component";
 
 @Component({
   selector: 'todos-list-item',
@@ -26,7 +25,7 @@ import {Item} from "./todos.component";
 export class TodosListItemComponent {
 
   @Input()
-  private item: Item;
+  private item: any;
 
   getClass(item){
     return { completed: item.done }

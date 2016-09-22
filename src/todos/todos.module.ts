@@ -9,6 +9,7 @@ import {TodosListItemComponent} from "./todos-list-item.component";
 import {SharedComponentsModule} from "../shared-components/shared-components.module";
 import {BrowserModule} from "@angular/platform-browser";
 import {PipesModule} from "../pipes/pipes.module";
+import {ModelsModule} from "../models/models.module";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {PipesModule} from "../pipes/pipes.module";
   imports     : [
       BrowserModule,
       SharedComponentsModule,
-      PipesModule
+      PipesModule,
+      ModelsModule
   ],
   exports     : [TodosComponent]
 })

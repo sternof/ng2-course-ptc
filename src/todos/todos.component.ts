@@ -1,4 +1,5 @@
 import {Component, ViewEncapsulation} from "@angular/core";
+import {TodoList} from "../models/todo-list.provider";
 
 @Component({
   selector     : 'todos',
@@ -7,15 +8,14 @@ import {Component, ViewEncapsulation} from "@angular/core";
   template     : `    
     <section class="todoapp">
     
-      <todos-hedaer [title]="title" 
-                    (itemAdded)="addItem($event)" ></todos-hedaer>
+      <todos-hedaer [title]="title"></todos-hedaer>
       
       <todos-main>
           <todos-toggle></todos-toggle>          
-          <todos-list [items]="items"></todos-list>
+          <todos-list [items]="model.items"></todos-list>
       </todos-main>
       <todos-footer>
-        <counter [amount]="items | count:'done':true "></counter>
+        <counter [amount]="model.items | count:'done':true "></counter>
       </todos-footer>
     </section>
 `
@@ -24,34 +24,12 @@ import {Component, ViewEncapsulation} from "@angular/core";
 export class TodosComponent {
 
   private title:string;
-  private items:Item[];
+  private model:TodoList;
 
-  constructor() {
+  constructor(model:TodoList) {
     this.title = "todos";
-    this.items = [];
-  }
-
-  countDone(){
-    return this.items.filter( item => !item.done ).length;
-  }
-
-  addItem(text:string) {
-    this.items = [ ...this.items, new Item(text) ];
-  }
-
-  removeItem(item:Item) {
-    let index = this.items.indexOf(item);
-    this.items.splice(index, 1);
+    this.model = model;
   }
 
 }
 
-export class Item {
-  public title:string;
-  public done:boolean;
-
-  constructor(title:string) {
-    this.title = title;
-    this.done  = true;
-  }
-}

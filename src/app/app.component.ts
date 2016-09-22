@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import {TodoList} from "../models/todo-list.provider";
 
 @Component({
   selector   : 'app',
@@ -8,4 +9,10 @@ import {Component} from "@angular/core";
 })
 
 
-export class AppComponent {}
+export class AppComponent {
+
+  constructor(model: TodoList) {
+
+  }
+
+}
