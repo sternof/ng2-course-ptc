@@ -5,13 +5,14 @@ import {ListViewComponent} from "../todos/list-view.component";
 import {TableViewComponent} from "../todos/table-view.component";
 
 export const routes:Routes = [
+  {path: '', redirectTo: 'login'},
   {path: 'login', component: LoginComponent},
   {
     path     : 'todos',
     component: TodosComponent,
     children : [
-      { path: 'list', component: ListViewComponent },
-      { path: 'table', component: TableViewComponent },
+      {path: 'list', component: ListViewComponent},
+      {path: 'table', component: TableViewComponent},
     ]
   }
 ];
