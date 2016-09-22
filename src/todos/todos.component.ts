@@ -15,7 +15,7 @@ import {Component, ViewEncapsulation} from "@angular/core";
           <todos-list [items]="items"></todos-list>
       </todos-main>
       <todos-footer>
-        <counter [amount]="countDone()"></counter>
+        <counter [amount]="items | count:'done':true "></counter>
       </todos-footer>
     </section>
 `
@@ -36,7 +36,7 @@ export class TodosComponent {
   }
 
   addItem(text:string) {
-    this.items.push(new Item(text))
+    this.items = [ ...this.items, new Item(text) ];
   }
 
   removeItem(item:Item) {

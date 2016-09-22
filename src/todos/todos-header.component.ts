@@ -7,9 +7,8 @@ import {Item} from "./todos.component";
     <header class="header">
     
     <h1>{{ title }} </h1>
-    <h2>{{ item | xjson | uppercase}}</h2>
-    
-    
+   
+   
     <input class="new-todo"
            #input
            type="text"
