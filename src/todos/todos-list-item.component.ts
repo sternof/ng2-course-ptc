@@ -14,7 +14,7 @@ import {Item} from "./todos.component";
                  
           <label>{{ item.title }}</label>
                             
-          <button *ngIf="item.done" class="destroy"></button>
+          <button class="destroy"></button>
 
         </div>
         <input class="edit">
