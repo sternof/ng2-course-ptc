@@ -1,5 +1,6 @@
 
 import {Component, Input} from "@angular/core";
+import {TodoList} from "../models/todo-list.provider";
 
 @Component({
   selector: 'todos-list-item',
@@ -13,7 +14,7 @@ import {Component, Input} from "@angular/core";
                  
           <label>{{ item.title }}</label>
                             
-          <button class="destroy"></button>
+          <button (click)="list.removeItem(item)" class="destroy"></button>
 
         </div>
         <input class="edit">
@@ -26,6 +27,11 @@ export class TodosListItemComponent {
 
   @Input()
   private item: any;
+  private list: TodoList;
+
+  constructor(list: TodoList) {
+    this.list = list;
+  }
 
   getClass(item){
     return { completed: item.done }
