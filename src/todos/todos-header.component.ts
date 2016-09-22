@@ -1,12 +1,14 @@
 import {Component, Input, Output, EventEmitter} from "@angular/core";
+import {Item} from "./todos.component";
 
 @Component({
   selector: 'todos-hedaer',
   template: `
     <header class="header">
     
-    <h1>{{ title }}</h1>
-    <div></div>
+    <h1>{{ title }} </h1>
+    <h2>{{ item | xjson | uppercase}}</h2>
+    
     
     <input class="new-todo"
            #input
@@ -22,6 +24,7 @@ export class TodosHeaderComponent {
 
   @Input()
   private title:string;
+  private item = new Item('nir');
 
   @Output()
   private itemAdded: EventEmitter<string>;

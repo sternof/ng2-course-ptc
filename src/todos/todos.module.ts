@@ -8,6 +8,7 @@ import {TodosListComponent} from "./todos-list.component";
 import {TodosListItemComponent} from "./todos-list-item.component";
 import {SharedComponentsModule} from "../shared-components/shared-components.module";
 import {BrowserModule} from "@angular/platform-browser";
+import {PipesModule} from "../pipes/pipes.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,11 @@ import {BrowserModule} from "@angular/platform-browser";
     TodosListComponent,
     TodosListItemComponent
   ],
-  imports     : [BrowserModule, SharedComponentsModule],
+  imports     : [
+      BrowserModule,
+      SharedComponentsModule,
+      PipesModule
+  ],
   exports     : [TodosComponent]
 })
 

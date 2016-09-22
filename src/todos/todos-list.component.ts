@@ -5,7 +5,7 @@ import {Item} from "./todos.component";
   selector: 'todos-list',
   template: `
     <ul class="todo-list">      
-      <todos-list-item *ngFor="let item of items"
+      <todos-list-item *ngFor="let item of items"                        
                         [item]="item">                        
       </todos-list-item>
    </ul>
