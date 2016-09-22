@@ -10,8 +10,8 @@ export const routes:Routes = [
     path     : 'todos',
     component: TodosComponent,
     children : [
-      {path: 'list', component: ListViewComponent},
-      {path: 'table', component: TableViewComponent},
+      { path: 'list', component: ListViewComponent },
+      { path: 'table', component: TableViewComponent },
     ]
   }
 ];

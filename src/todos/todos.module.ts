@@ -15,12 +15,11 @@ import {TableViewComponent} from "./table-view.component";
 import {RouterModule} from "@angular/router";
 
 @NgModule({
+
   declarations: [
     TodosComponent,
-
     ListViewComponent,
     TableViewComponent,
-
     TodosMainComponent,
     TodosHeaderComponent,
     TodosFooterComponent,
@@ -28,6 +27,7 @@ import {RouterModule} from "@angular/router";
     TodosListComponent,
     TodosListItemComponent
   ],
+
   imports     : [
     BrowserModule,
     SharedComponentsModule,
@@ -35,6 +35,7 @@ import {RouterModule} from "@angular/router";
     ModelsModule,
     RouterModule
   ],
+
   exports     : [
     TodosComponent,
     ListViewComponent,
