@@ -3,6 +3,8 @@ import {AppComponent} from "./app.component";
 import {BrowserModule} from "@angular/platform-browser";
 import {TodosModule} from "../todos/todos.module";
 import {LoginModule} from "../login/login.module";
+import {RouterModule} from "@angular/router";
+import {routes} from "./app.routes";
 
 
 @NgModule({
@@ -10,7 +12,8 @@ import {LoginModule} from "../login/login.module";
   imports     : [
     BrowserModule,
     LoginModule,
-    TodosModule
+    TodosModule,
+    RouterModule.forRoot(routes)
   ],
   bootstrap   : [AppComponent]
 })

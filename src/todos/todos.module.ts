@@ -10,10 +10,17 @@ import {SharedComponentsModule} from "../shared-components/shared-components.mod
 import {BrowserModule} from "@angular/platform-browser";
 import {PipesModule} from "../pipes/pipes.module";
 import {ModelsModule} from "../models/models.module";
+import {ListViewComponent} from "./list-view.component";
+import {TableViewComponent} from "./table-view.component";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
     TodosComponent,
+
+    ListViewComponent,
+    TableViewComponent,
+
     TodosMainComponent,
     TodosHeaderComponent,
     TodosFooterComponent,
@@ -22,12 +29,17 @@ import {ModelsModule} from "../models/models.module";
     TodosListItemComponent
   ],
   imports     : [
-      BrowserModule,
-      SharedComponentsModule,
-      PipesModule,
-      ModelsModule
+    BrowserModule,
+    SharedComponentsModule,
+    PipesModule,
+    ModelsModule,
+    RouterModule
   ],
-  exports     : [TodosComponent]
+  exports     : [
+    TodosComponent,
+    ListViewComponent,
+    TableViewComponent,
+  ]
 })
 
 
