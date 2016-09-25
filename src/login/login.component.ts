@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, OnInit, OnDestroy} from "@angular/core";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {CustomValidators} from "./custom-validators";
 
@@ -35,7 +35,7 @@ import {CustomValidators} from "./custom-validators";
   `
 })
 
-export class LoginComponent {
+export class LoginComponent  {
 
   private loginForm:FormGroup;
   private username = new FormControl('', Validators.compose([
@@ -44,11 +44,11 @@ export class LoginComponent {
   ]));
 
   constructor() {
+
     this.loginForm = new FormGroup({
       username: this.username,
       password: new FormControl(''),
     });
-
   }
 
   submit() {

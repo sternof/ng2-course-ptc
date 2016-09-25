@@ -5,6 +5,7 @@ import {TodosModule} from "../todos/todos.module";
 import {LoginModule} from "../login/login.module";
 import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
+import {HttpModule} from "@angular/http";
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import {routes} from "./app.routes";
     BrowserModule,
     LoginModule,
     TodosModule,
+    HttpModule,
     RouterModule.forRoot(routes)
   ],
   bootstrap   : [AppComponent]

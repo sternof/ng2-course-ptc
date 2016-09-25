@@ -1,9 +1,17 @@
 {
-  "login": {
-    "username": "Nir Kaufman"
-  },
+  "login": {},
   "items": [
-    { "title": "learn angular", "done": true },
-    { "title": "learn typescript", "done": false }
+    {
+      "title": "learn angular",
+      "done": true
+    },
+    {
+      "title": "learn typescript",
+      "done": false
+    },
+    {
+      "id": 3,
+      "title": "new item"
+    }
   ]
 }
