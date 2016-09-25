@@ -2,5 +2,8 @@
   "login": {
     "username": "Nir Kaufman"
   },
-  "items": []
+  "items": [
+    { "title": "learn angular", "done": true },
+    { "title": "learn typescript", "done": false }
+  ]
 }
