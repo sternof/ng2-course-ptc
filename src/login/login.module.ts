@@ -7,6 +7,7 @@ import {BrowserModule} from "@angular/platform-browser";
 @NgModule({
   declarations: [LoginComponent],
   imports: [
+    BrowserModule,
     ReactiveFormsModule,
   ],
   exports: [

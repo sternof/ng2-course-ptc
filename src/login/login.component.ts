@@ -4,7 +4,11 @@ import {CustomValidators} from "./custom-validators";
 
 @Component({
   selector: 'login',
-  styles  : [`input {height: 30px; width: 120px}`],
+  styles  : [`
+      input {height: 30px; width: 120px}
+      input.ng-invalid { border-bottom: 2px solid red }
+      `
+  ],
   template: `
         <h2>Login</h2>
         
@@ -15,7 +19,7 @@ import {CustomValidators} from "./custom-validators";
                    formControlName="username"
                    placeholder="username">
           </div>
-          
+                                 
           <div>
             <input type="password"
                    formControlName="password"
