@@ -1,6 +1,6 @@
 import {NgModule} from "@angular/core";
 import {LoginComponent} from "./login.component";
-import {ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {BrowserModule} from "@angular/platform-browser";
 
 
@@ -8,7 +8,7 @@ import {BrowserModule} from "@angular/platform-browser";
   declarations: [LoginComponent],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   exports: [
       LoginComponent,

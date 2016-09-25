@@ -19,6 +19,8 @@ import {CustomValidators} from "./custom-validators";
                    formControlName="username"
                    placeholder="username">
           </div>
+                            
+        <pre>{{ username.errors | json }}</pre>                                 
                                  
           <div>
             <input type="password"

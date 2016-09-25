@@ -18,7 +18,7 @@ export class TodoList {
   }
 
   addItem(text:string) {
-    this.items = [ ...this.items, new Item(text) ];
+    this.items = [ ...this.items, new Item(text)];
   }
 
   removeItem(item:Item) {
