@@ -1,6 +1,9 @@
-import {Component, OnInit, OnDestroy} from "@angular/core";
+import {Component} from "@angular/core";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {CustomValidators} from "./custom-validators";
+import {store, ACTIONS} from "../app/app.store";
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'login',
@@ -35,7 +38,8 @@ import {CustomValidators} from "./custom-validators";
   `
 })
 
-export class LoginComponent  {
+export class LoginComponent {
+  private router:Router;
 
   private loginForm:FormGroup;
   private username = new FormControl('', Validators.compose([
@@ -43,7 +47,9 @@ export class LoginComponent  {
     CustomValidators.noSpace
   ]));
 
-  constructor() {
+  constructor(router:Router) {
+
+    this.router = router;
 
     this.loginForm = new FormGroup({
       username: this.username,
@@ -51,8 +57,19 @@ export class LoginComponent  {
     });
   }
 
+  ngOnInit() {
+    store.subscribe(() => {
+      if (store.getState().user) {
+        this.router.navigate(['todos/list']);
+      }
+    })
+  }
+
   submit() {
-    console.log(this.username);
+    store.dispatch({
+      type   : ACTIONS.LOGIN,
+      payload: this.loginForm.value
+    })
   }
 
 }

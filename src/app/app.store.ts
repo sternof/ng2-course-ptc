@@ -7,7 +7,7 @@ const initState = {
 };
 
 // helper constants
-const ACTIONS = {
+export const ACTIONS = {
   LOGIN        : 'LOGIN',
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   ADD_ITEM     : 'ADD_ITEM',
@@ -43,8 +43,6 @@ class TodosReducer {
         return state;
     }
   }
-
-
 }
 
-const store = createStore(TodosReducer.reduce, applyMiddleware(auth));
+export const store = createStore(TodosReducer.reduce, applyMiddleware(auth));

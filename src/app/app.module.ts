@@ -6,10 +6,12 @@ import {LoginModule} from "../login/login.module";
 import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
 import {HttpModule} from "@angular/http";
+import {IsUser} from "./app.gurdes";
 
 
 @NgModule({
   declarations: [AppComponent],
+  providers: [IsUser],
   imports     : [
     BrowserModule,
     LoginModule,
